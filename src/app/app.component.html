@@ -1,4 +1,10 @@
 <h1>Posts page</h1>
-<label><input type="text" [value]="title" (input)="onInput($event)"></label>
-<label><input type="text" [(ngModel)]="title"></label>
-<p>{{title}}</p>
+<button (click)="backgroundToggle =!backgroundToggle">toggle</button>
+<div [ngStyle]="{
+  width: '200px',
+  height: '200px',
+  borderRadius: '5px',
+  border: '1px solid #ccc',
+  background:backgroundToggle? 'red':'blue'
+}">
+</div>
