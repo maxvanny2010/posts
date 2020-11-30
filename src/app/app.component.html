@@ -1,13 +1,24 @@
 <h1>Posts page</h1>
-<p>{{title}}</p>
-<!--<p><strong>{{number - 2}}</strong></p>
+<!--<p>{{title}}</p>
+<p><strong>{{number - 2}}</strong></p>
 <p>{{arr}}</p>
 <p>{{obj}}</p>
 <p>{{obj.b.c}}</p>
 <p>{{'Hello' + 'world'}}</p>
 <p>{{'Hello' + 2 }}</p>
-<p>{{2 + 'Hello' }}</p>-->
+<p>{{2 + 'Hello' }}</p>
 <img src="{{img}}" alt="">
-<img [src]="img" alt="">
+<img [src]="img" alt="">-->
+<button class="btn" (click)="onClick()">Click me</button>
+<label> <input type="text" (input)="onInput($event)"></label>
+<label> <input type="text" (keyup)="onKeyBoardUp($event)"></label>
+<label> <input type="text"
+               (keyup.enter)="onKeyBoardEnter($event)"
+               (blur)="onBlur(myInput.value)"
+               #myInput
+></label>
+<p><strong>{{value}}</strong></p>
+<p><strong>{{key}}</strong></p>
+<p><strong>{{enter}}</strong></p>
 <app-post></app-post>
 <app-post></app-post>
