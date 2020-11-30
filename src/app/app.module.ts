@@ -1,8 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
 
 import {FormsModule} from '@angular/forms';
-import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {PostComponent} from './post/post.component';
 import {Post2Component} from './post2/post2.component';
@@ -16,7 +15,6 @@ import {Post2Component} from './post2/post2.component';
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
