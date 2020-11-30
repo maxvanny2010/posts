@@ -1,5 +1,6 @@
 <h1>Posts page</h1>
-<button (click)="backgroundToggle =!backgroundToggle">toggle</button>
+<button (click)="backgroundToggle = !backgroundToggle">toggle</button>
+<!--
 <div [ngStyle]="{
   width: '200px',
   height: '200px',
@@ -8,3 +9,13 @@
   background:backgroundToggle? 'red':'blue'
 }">
 </div>
+-->
+<!--<p [ngClass]="{
+  red: backgroundToggle,
+  green: !backgroundToggle
+}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, sapiente!</p>-->
+
+
+<p [class.red]="backgroundToggle"
+   [class.green]="!backgroundToggle"
+>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, suscipit?</p>
