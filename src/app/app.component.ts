@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      console.log(this.posts[0].title = 'CHANGED!');
+      console.log(this.posts[0] = {title: 'CHANGED!', text: 'CHANGED!', id: 33});
     }, 3000);
   }
 }
