@@ -18,4 +18,7 @@ export class AppComponent {
     {title: 'Третий компонент', text: 'Текст третьего компонента', id: 3}
   ];
 
+  addPost(post: Post): void {
+    this.posts.unshift(post);
+  }
 }
