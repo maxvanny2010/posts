@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {CommonModule} from '@angular/common';
-import { StyleDirective } from './derectives/style.directive';
+import {StyleDirective} from './derectives/style.directive';
 
 @NgModule({
   declarations: [

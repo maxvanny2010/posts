@@ -1,20 +1,7 @@
 <div class="container">
-  <h1>Angular Components</h1>
-  <h2>Sub Header</h2>
-  <app-post-form
-    (add)="addPost($event)"
-  ></app-post-form>
-
-  <hr/>
-
-  <app-post
-    *ngFor="let p of posts"
-    [post]="p"
-    (remove)="removePost($event)"
-  >
-    <div #info>
-      <small *ngIf="p.text.length > 10; else short">пост длинный</small>
-      <ng-template #short><small>пост короткий</small></ng-template>
-    </div>
-  </app-post>
+  <h1>Directives</h1>
+  <p [appStyle]="'red'" [dStyle]="{border: '1px solid blue', borderRadius:'5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, possimus?</p>
+  <p [appStyle]="'blue'" [dStyle]="{border: '1px solid red', borderRadius:'5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, possimus?</p>
 </div>
