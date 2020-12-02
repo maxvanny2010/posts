@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Observable} from 'rxjs';
 
 export interface Post {
   title: string;
@@ -19,5 +20,14 @@ export class AppComponent {
   search = '';
   field = 'title';
 
-
+  p: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('Promise Resolved');
+    }, 3000);
+  });
+  date: Observable<Date> = new Observable<Date>(obs => {
+    setInterval(() => {
+      obs.next(new Date());
+    }, 1000);
+  });
 }
