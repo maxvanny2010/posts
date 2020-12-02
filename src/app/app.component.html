@@ -1,56 +1,13 @@
 <div class="container">
   <h1>Pipes</h1>
-  <table>
-    <tr>
-      <td><p>{{e | number:'1.1-5'}}</p></td>
-      <td><p>{{e | number:'3.1-2'}}</p></td>
-      <td><p>{{e | number:'1.0-0'}}</p></td>
-    </tr>
-    <tr>
-      <td><p>{{str | lowercase}}</p></td>
-      <td><p>{{str | uppercase}}</p></td>
-      <td><p>{{str | uppercase| uppercase| titlecase}}</p></td>
-    </tr>
-    <tr>
-      <td><p>{{str | titlecase | slice:1}}</p></td>
-      <td><p>{{str | titlecase | slice:1:5}}</p></td>
-      <td><p>{{str | titlecase | slice:1:5 - 2}}</p></td>
-    </tr>
-    <tr>
-      <td><p>{{date| date:'short'}}</p></td>
-      <td><p>{{date| date}}</p></td>
-      <td><p>{{date| date:'fullDate'}}</p></td>
-    </tr>
-    <tr>
-      <td><p>{{date| date:'longDate'}}</p></td>
-      <td><p>{{date| date:'yyyy'}}</p></td>
-      <td><p>{{date| date:'dd/MM/yyyy. HH:mm:ss'}}</p></td>
-    </tr>
-    <tr>
-      <td><p>{{float|currency}}</p></td>
-      <td><p>{{float|percent:'3.1-2'}}</p></td>
-      <td><p>{{float|percent:'2.0-0'}}</p></td>
-    </tr>
-    <tr>
-      <td>
-        <pre>{{obj}}</pre>
-      </td>
-      <td>
-        <pre>{{obj | json}}</pre>
-      </td>
-      <td>
-        <pre>{{obj | json}}</pre>
-      </td>
-    </tr>
-    <tr>
-      <td><p>{{10 |mult}}</p></td>
-      <td><p>{{10 |mult:3}}</p></td>
-      <td><p>{{10 |mult:10}}</p></td>
-    </tr>
-    <tr>
-      <td><p>{{ 'hi' | action}}</p></td>
-      <td><p>{{ 'lo' | action}}</p></td>
-      <td><p>{{ 'la' | action}}</p></td>
-    </tr>
-  </table>
+  <button class="btn" (click)="field='title'">Title</button>
+  <button class="btn" (click)="field='text'">Text</button>
+  <label> <input type="text" [(ngModel)]="search"> </label>
+  <div
+    *ngFor="let post of posts | filter:search:field"
+    class="card"
+  >
+    <h2>{{post.title}}</h2>
+    <p>{{post.text}}</p>
+  </div>
 </div>

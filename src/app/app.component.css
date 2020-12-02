@@ -1,12 +1,3 @@
 p {
   font-size: 1.5rem;
 }
-
-table {
-  border: 1px dashed #cccccc;
-  text-align: center;
-}
-
-td {
-  border: 1px dashed #cccccc;
-}
