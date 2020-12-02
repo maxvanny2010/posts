@@ -4,10 +4,12 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {CommonModule} from '@angular/common';
+import {MultPipe} from './pipes/mult.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MultPipe,
   ],
   imports: [
     BrowserModule,
