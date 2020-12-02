@@ -5,15 +5,21 @@
   <p [appStyle]="'blue'" [dStyle]="{border: '1px solid red', borderRadius:'5px'}">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, possimus?</p>
   <button class="btn" (click)="isVisible = !isVisible">toggle</button>
+  <hr/>
   <div class="wrap" *ngIf="isVisible">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Culpa laudantium omnis optio pariatur placeat, rem temporibus vitae voluptates. Ex, facere?
   </div>
-  <button class="btn" (click)="isVisible = !isVisible">toggle</button>
+  <hr/>
   <ng-template [ngIf]="isVisible">
     <div class="wrap">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       Culpa laudantium omnis optio pariatur placeat, rem temporibus vitae voluptates. Ex, facere?
     </div>
   </ng-template>
+  <hr/>
+  <div class="wrap" *appIfnot="isVisible">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Culpa laudantium omnis optio pariatur placeat, rem temporibus vitae voluptates. Ex, facere?
+  </div>
 </div>
