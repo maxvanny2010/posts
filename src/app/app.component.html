@@ -1,15 +1,14 @@
 <div class="container">
-  <h1>Pipes</h1>
-  <button class="btn" (click)="field='title'">Title</button>
-  <button class="btn" (click)="field='text'">Text</button>
-  <label> <input type="text" [(ngModel)]="search"> </label>
-  <div
-    *ngFor="let post of posts | filter:search:field"
-    class="card"
-  >
-    <h2>{{post.title}}</h2>
-    <p>{{post.text}}</p>
+  <h1>Services</h1>
+  <div class="card"><h2>App counter: {{global.counter}}</h2>
+    <button class="btn" (click)="global.increase()">+</button>
+    <button class="btn" (click)="global.decrease()">-</button>
   </div>
-  <p>Over 3sec to get action | async... {{p | async}}</p>
-  <p>{{date |  async | date:'HH:mm:ss yyyy'}}</p>
+  <div class="card"><h2>Local counter: {{local.counter}}</h2>
+    <button class="btn" (click)="local.increase()">+</button>
+    <button class="btn" (click)="local.decrease()">-</button>
+  </div>
+  <hr/>
+  <app-counter></app-counter>
 </div>
+

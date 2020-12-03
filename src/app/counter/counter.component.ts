@@ -1,0 +1,16 @@
+import {Component} from '@angular/core';
+import {CounterService} from '../services/counter.service';
+import {LocalCounterService} from '../services/local-counter.service';
+
+@Component({
+  selector: 'app-counter',
+  templateUrl: './counter.component.html',
+  styleUrls: ['./counter.component.css'],
+  providers: [LocalCounterService]
+})
+export class CounterComponent {
+
+  constructor(public global: CounterService, public local: LocalCounterService) {
+  }
+
+}
