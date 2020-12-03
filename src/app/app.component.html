@@ -1,14 +1,52 @@
 <div class="container">
-  <h1>Services</h1>
-  <div class="card"><h2>App counter: {{global.counter}}</h2>
-    <button class="btn" (click)="global.increase()">+</button>
-    <button class="btn" (click)="global.decrease()">-</button>
-  </div>
-  <div class="card"><h2>Local counter: {{local.counter}}</h2>
-    <button class="btn" (click)="local.increase()">+</button>
-    <button class="btn" (click)="local.decrease()">-</button>
-  </div>
-  <hr/>
-  <app-counter></app-counter>
+  <form class="card">
+    <h1>Forms</h1>
+
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" placeholder="Email" id="email">
+      <div class="validation"></div>
+    </div>
+
+    <div class="form-control">
+      <label for="ps">Пароль</label>
+      <input type="password" placeholder="Password" id="ps">
+      <div class="validation"></div>
+    </div>
+
+    <div class="card">
+      <h2>Адрес</h2>
+
+      <div class="form-control">
+        <label>Страна </label>
+
+        <label>
+          <select>
+            <option value="ch">Швейцария</option>
+            <option value="ua">Украина</option>
+            <option value="us">США</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-control">
+        <label for="capital"></label>
+        <input type="text" id="capital">
+      </div>
+
+      <button class="btn">Выбрать столицу</button>
+    </div>
+
+    <div class="card">
+      <h2>Ваши навыки</h2>
+      <button class="btn">Добавить умение</button>
+      <div class="form-control">
+        <label for="bt"></label>
+        <input type="text" id="bt">
+      </div>
+    </div>
+    <button class="btn">Отправить</button>
+
+  </form>
 </div>
 
