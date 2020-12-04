@@ -1,18 +1,33 @@
 <div class="container">
-  <form class="card">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
     <h1>Forms</h1>
 
     <div class="form-control">
       <label for="email">Email</label>
-      <input type="email" placeholder="Email" id="email">
-      <div class="validation"></div>
+      <input type="email" placeholder="Email" id="email" formControlName="email">
+      <div
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+        class="validation"
+      >
+        <small *ngIf="form.get('email').errors.required">Поле не может быть пустым</small>
+        <small *ngIf="form.get('email').errors.email">Введите корретный email</small>
+      </div>
     </div>
 
     <div class="form-control">
       <label for="ps">Пароль</label>
-      <input type="password" placeholder="Password" id="ps">
-      <div class="validation"></div>
+      <input type="password" placeholder="Password" id="ps" formControlName="password">
+      <div
+        *ngIf="form.get('password').invalid && form.get('password').touched"
+        class="validation">
+        <small *ngIf="form.get('password').errors.required">Поле не может быть пустым</small>
+        <small *ngIf="form.get('password').errors.minlength">
+          Длина должна быть {{form.get('password').errors.minlength.requiredLength}}.
+          Сейчас длина {{form.get('password').errors.minlength.actualLength}}.
+        </small>
+      </div>
     </div>
+    <!-- <pre>{{ form.get('password').errors | json }}</pre>-->
 
     <div class="card">
       <h2>Адрес</h2>
@@ -34,18 +49,18 @@
         <input type="text" id="capital">
       </div>
 
-      <button class="btn">Выбрать столицу</button>
+      <button class="btn" type="button">Выбрать столицу</button>
     </div>
 
     <div class="card">
       <h2>Ваши навыки</h2>
-      <button class="btn">Добавить умение</button>
+      <button class="btn" type="button">Добавить умение</button>
       <div class="form-control">
         <label for="bt"></label>
         <input type="text" id="bt">
       </div>
     </div>
-    <button class="btn">Отправить</button>
+    <button class="btn" type="submit" [disabled]="form.invalid">Отправить</button>
 
   </form>
 </div>
