@@ -29,14 +29,14 @@
     </div>
     <!-- <pre>{{ form.get('password').errors | json }}</pre>-->
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Адрес</h2>
 
       <div class="form-control">
         <label>Страна </label>
 
         <label>
-          <select>
+          <select formControlName="country">
             <option value="ch">Швейцария</option>
             <option value="ua">Украина</option>
             <option value="us">США</option>
@@ -46,10 +46,10 @@
 
       <div class="form-control">
         <label for="capital"></label>
-        <input type="text" id="capital">
+        <input type="text" id="capital" placeholder="Город" formControlName="city">
       </div>
 
-      <button class="btn" type="button">Выбрать столицу</button>
+      <button class="btn" type="button" (click)="setCapital()">Выбрать столицу</button>
     </div>
 
     <div class="card">
