@@ -1,4 +1,5 @@
 import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
 
 export class MyValidators {
   static restrictedEmail(control: FormControl): { [key: string]: boolean } {
@@ -6,5 +7,17 @@ export class MyValidators {
       return {restrictedEmail: true};
     }
     return null;
+  }
+
+  static uniqEmail(control: FormControl): Promise<any> | Observable<any> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        if (control.value === 'async@m.ru') {
+          resolve({uniqEmail: true});
+        } else {
+          resolve(null);
+        }
+      }, 5000);
+    });
   }
 }
