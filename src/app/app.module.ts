@@ -1,19 +1,20 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AppComponent} from './app.component';
+import {SwitchComponent} from './switch/switch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SwitchComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

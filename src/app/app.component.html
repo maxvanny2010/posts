@@ -1,72 +1,10 @@
 <div class="container">
-  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
-    <h1>Forms</h1>
-
-    <div class="form-control">
-      <label for="email">Email</label>
-      <input type="email" placeholder="Email" id="email" formControlName="email">
-      <div
-        *ngIf="form.get('email').invalid && form.get('email').touched"
-        class="validation"
-      >
-        <small *ngIf="form.get('email').errors.required">Поле не может быть пустым</small>
-        <small *ngIf="form.get('email').errors.email">Введите корретный email</small>
-        <small *ngIf="form.get('email').errors.restrictedEmail">{{form.get('email').value}} запрещён</small>
-        <small *ngIf="form.get('email').errors.uniqEmail">{{form.get('email').value}} занят</small>
-      </div>
-    </div>
-
-    <div class="form-control">
-      <label for="ps">Пароль</label>
-      <input type="password" placeholder="Password" id="ps" formControlName="password">
-      <div
-        *ngIf="form.get('password').invalid && form.get('password').touched"
-        class="validation">
-        <small *ngIf="form.get('password').errors.required">Поле не может быть пустым</small>
-        <small *ngIf="form.get('password').errors.minlength">
-          Длина должна быть {{form.get('password').errors.minlength.requiredLength}}.
-          Сейчас длина {{form.get('password').errors.minlength.actualLength}}.
-        </small>
-      </div>
-    </div>
-    <!-- <pre>{{ form.get('password').errors | json }}</pre>-->
-
-    <div class="card" formGroupName="address">
-      <h2>Адрес</h2>
-
-      <div class="form-control">
-        <label>Страна </label>
-
-        <label>
-          <select formControlName="country">
-            <option value="ch">Швейцария</option>
-            <option value="ua">Украина</option>
-            <option value="us">США</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="form-control">
-        <label for="capital"></label>
-        <input type="text" id="capital" placeholder="Город" formControlName="city">
-      </div>
-
-      <button class="btn" type="button" (click)="setCapital()">Выбрать столицу</button>
-    </div>
-
-    <div class="card" formGroupName="skills">
-      <h2>Ваши навыки</h2>
-      <button class="btn" type="button" (click)="addSkill()">Добавить умение</button>
-      <div class="form-control"
-           *ngFor="let control of form.get('skills')['controls']; let idx = index"
-      >
-        <label>Умение {{idx + 1}}
-          <input type="text" [formControlName]="idx">
-        </label>
-      </div>
-    </div>
-    <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Отправить</button>
-
-  </form>
+  <h1>([NgModel])</h1>
+  <app-switch
+    [(ngModel)]="appState"
+    (ngModelChange)="handleChange()"
+  ></app-switch>
+  <hr/>
+  <p>{{appState}}</p>
 </div>
 

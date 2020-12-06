@@ -13,6 +13,7 @@ input.ng-valid.ng-touched {
 .validation {
   color: red;
 }
+
 input {
   margin-bottom: 0;
 }
