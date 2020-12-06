@@ -11,6 +11,7 @@
       >
         <small *ngIf="form.get('email').errors.required">Поле не может быть пустым</small>
         <small *ngIf="form.get('email').errors.email">Введите корретный email</small>
+        <small *ngIf="form.get('email').errors.restrictedEmail">{{form.get('email').value}} запрещён</small>
       </div>
     </div>
 
