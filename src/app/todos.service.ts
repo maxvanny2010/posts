@@ -13,11 +13,10 @@ export class TodosService {
   }
 
   add(todo: Todo): Observable<Todo> {
-    return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo, {
-      headers: new HttpHeaders({
-        Token: Math.random().toString(),
-      })
+    const headers = new HttpHeaders({
+      Token: Math.random().toString(),
     });
+    return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo, {headers});
   }
 
   fetch(): Observable<Todo[]> {
