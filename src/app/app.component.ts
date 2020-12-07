@@ -53,4 +53,10 @@ export class AppComponent implements OnInit {
       this.todos = this.todos.filter(todo => todo.id !== id);
     });
   }
+
+  completeTodo(id: number): void {
+    this.service.completed(id).subscribe(todo => {
+      this.todos.find(t => t.id === todo.id).completed = true;
+    });
+  }
 }
