@@ -15,6 +15,7 @@ export interface Todo {
 export class AppComponent implements OnInit {
   todos: Todo[] = [];
   todoTitle = '';
+  error = '';
   loading = false;
 
   constructor(private service: TodosService) {
@@ -45,6 +46,9 @@ export class AppComponent implements OnInit {
     this.service.fetch().subscribe(todos => {
       this.todos = todos;
       this.loading = false;
+    }, error => {
+      console.log(error.message);
+      this.error = error.message;
     });
   }
 
