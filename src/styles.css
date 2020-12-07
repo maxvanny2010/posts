@@ -20,6 +20,15 @@ body {
   padding: 1rem;
 }
 
+p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.validation {
+  color: red;
+}
+
 a {
   text-decoration: none;
 }
@@ -55,6 +64,11 @@ img {
   cursor: not-allowed;
 }
 
+.btn.btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
 .btn:hover {
   opacity: 0.8;
 }
@@ -87,6 +101,10 @@ textarea {
   font-size: 1.2rem;
   border: 1px solid #ccc;
   margin-bottom: 1rem;
+}
+
+span.completed {
+  text-decoration: line-through;
 }
 
 hr {

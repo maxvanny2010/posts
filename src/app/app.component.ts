@@ -6,12 +6,4 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  appState = 'on';
-
-  constructor() {
-  }
-
-  handleChange(): void {
-    console.log(this.appState);
-  }
 }

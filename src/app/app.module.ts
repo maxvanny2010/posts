@@ -4,12 +4,10 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AppComponent} from './app.component';
-import {SwitchComponent} from './switch/switch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SwitchComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,18 +2,10 @@ p {
   font-size: 1.5rem;
 }
 
-input.ng-invalid.ng-touched {
+.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
-input.ng-valid.ng-touched {
+.ng-valid.ng-touched {
   border: 1px solid green;
-}
-
-.validation {
-  color: red;
-}
-
-input {
-  margin-bottom: 0;
 }
