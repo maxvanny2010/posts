@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Todo} from './app.component';
 import {Observable, throwError} from 'rxjs';
-import {catchError, delay} from 'rxjs/operators';
+import {catchError, delay, map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,15 +23,21 @@ export class TodosService {
     let params = new HttpParams();
     params = params.append('_limit', '4');
     params = params.append('custom', 'anything');
-    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=2', {
+    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?', {
       //  params: new HttpParams().set('_limit', '3')
-      params
+      params,
+      observe: 'response'
     })
       .pipe(
+        map(response => {
+          console.log(response);
+          return response.body;
+        }),
         delay(500),
         catchError(error => {
           return throwError(error);
-        }));
+        })
+      );
   }
 
   remove(id: number): Observable<void> {
