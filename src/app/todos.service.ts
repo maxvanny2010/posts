@@ -55,6 +55,11 @@ export class TodosService {
   }
 
   completed(id: number): Observable<Todo> {
-    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, {complete: true});
+    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`,
+      {
+        complete: true
+      }, {
+        responseType: 'json'
+      });
   }
 }
