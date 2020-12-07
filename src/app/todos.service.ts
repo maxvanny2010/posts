@@ -45,10 +45,10 @@ export class TodosService {
     }).pipe(
       tap(event => {
         if (event.type === HttpEventType.Sent) {
-          console.log('Sent', event);
+       //   console.log('Sent', event);
         }
         if (event.type === HttpEventType.Response) {
-          console.log('Response', event);
+       //   console.log('Response', event);
         }
       })
     );

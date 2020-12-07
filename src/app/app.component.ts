@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
       completed: false
     };
     this.service.add(newTodo).subscribe(todo => {
-      console.log(todo);
       this.todos.push(todo);
       this.todoTitle = '';
     });
@@ -47,7 +46,6 @@ export class AppComponent implements OnInit {
       this.todos = todos;
       this.loading = false;
     }, error => {
-      console.log(error.message);
       this.error = error.message;
     });
   }
