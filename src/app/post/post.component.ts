@@ -21,6 +21,7 @@ export class PostComponent implements OnInit {
   }
 
   loadPost(): void {
-    this.router.navigate(['/posts', 44]).then(r => {});
+    this.router.navigate(['/posts', 44]).then(r => {
+    });
   }
 }

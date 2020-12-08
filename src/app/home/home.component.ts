@@ -12,6 +12,7 @@ export class HomeComponent {
   }
 
   goToPostPage(): void {
-    this.router.navigate(['/posts']).then(r => {});
+    this.router.navigate(['/posts']).then(r => {
+    });
   }
 }
