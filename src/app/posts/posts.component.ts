@@ -18,13 +18,17 @@ export class PostsComponent implements OnInit {
       console.log(query);
       this.showId = !!query.showId;
     });
+    this.route.fragment.subscribe((fragment) => {
+      console.log(fragment);
+    });
   }
 
   showIdProgram(): void {
     this.router.navigate(['/posts'], {
       queryParams: {
         showId: true
-      }
+      },
+      fragment: 'navigate-fragment'
     }).then();
   }
 }
