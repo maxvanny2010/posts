@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PostsService} from '../posts.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 export class PostsComponent implements OnInit {
   showId = false;
 
-  constructor(public postsService: PostsService, private route: ActivatedRoute) {
+  constructor(public postsService: PostsService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -20,4 +20,11 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  showIdProgram(): void {
+    this.router.navigate(['/posts'], {
+      queryParams: {
+        showId: true
+      }
+    }).then();
+  }
 }
